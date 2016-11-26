@@ -5,16 +5,24 @@ import tweepy #https://github.com/tweepy/tweepy
 import csv
 import json
 
-#pass in the usernames of the accounts you want to download
+# ΑΡΧΙΚΕΣ ΜΕΤΑΒΛΗΤΕΣ
+
+# Εδώ βάζουμε τους λογαριασμούς Twitter που θέλουμε να κατεβάσουμε
+# Μπορούμε να βάλουμε όσους θέλουμε
+# Ενδεικτικά έχω βάλει 3 λογαριασμούς Ελλήνων πολιτικών
+# Εσείς βάλτε τους δικούς σας
 accounts = ['AdonisGeorgiadi','PanosKammenos','rachelmakri']
 
-# load our API credentials from config.py file
+# ΜΗΝ ΑΛΛΑΞΕΤΕ ΚΑΤΙ ΑΠΟ ΔΩ ΚΑΙ ΚΑΤΩ
+
+# Φορτώνουμε τα διαπιστευτήρια για το API του Twitter που βρίσκονται στο αρχείο config.py
 config = {}
 execfile("config.py", config)
 
-#authorize twitter, initialize tweepy
+# Ταυτοποίηση μέσω των διαπιστευτηρίων μας στο Twitter
 auth = tweepy.OAuthHandler(config['consumer_key'], config['consumer_secret'])
 auth.set_access_token(config['access_key'], config['access_secret'])
+# Ενεργοποίηση της βιβλιοθήκης tweepy
 api = tweepy.API(auth)
 
 
