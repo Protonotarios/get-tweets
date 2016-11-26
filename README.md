@@ -25,5 +25,5 @@
 ## Attributions
 
 * [get-tweets.py]() is a fork of yanofsky's gist [tweet_dumper.py](https://gist.github.com/yanofsky/5436496)
-* Ο σχεδιασμός της φιλοσοφίας του προγράμματος έγινε σε συνεργασία με τη Βάνα Σαρίμπεη
+* Ο σχεδιασμός της φιλοσοφίας του προγράμματος έγινε σε συνεργασία με τη Βάνα Σαρήμπεη
 
