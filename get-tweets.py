@@ -11,6 +11,8 @@ access_key = ""
 access_secret = ""
 bearer_token = ""
 
+#pass in the usernames of the accounts you want to download
+accounts = ['AdonisGeorgiadi','PanosKammenos','rachelmakri']
 
 
 def get_all_tweets(screen_name):
@@ -38,7 +40,8 @@ def get_all_tweets(screen_name):
 		print "getting tweets before %s" % (oldest)
 		
 		#all subsiquent requests use the max_id param to prevent duplicates
-		new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id=oldest) 
+		#new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id=oldest) 
+		new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id='300')
 
 		
 		#save most recent tweets
@@ -62,5 +65,5 @@ def get_all_tweets(screen_name):
 
 
 if __name__ == '__main__':
-	#pass in the username of the account you want to download
-	get_all_tweets("AdonisGeorgiadi")
+	for account in accounts:
+		get_all_tweets(account)
