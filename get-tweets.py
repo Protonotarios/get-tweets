@@ -4,7 +4,8 @@
 import tweepy #https://github.com/tweepy/tweepy
 import csv
 
-# Εδώ βάζουμε τα ονόματα χρήστη που θέλουμε να κατεβάσουμε, όσα θέλουμε
+# Εδώ βάζουμε τους λογαριασμούς Twitter που θέλουμε να κατεβάσουμε
+# Μπορούμε να βάλουμε όσους θέλουμε
 accounts = ['AdonisGeorgiadi','PanosKammenos','rachelmakri']
 
 # Φορτώνουμε τα διαπιστευτήρια για το API του Twitter που βρίσκονται στο αρχείο config.py
