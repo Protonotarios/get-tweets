@@ -4,55 +4,56 @@
 import tweepy #https://github.com/tweepy/tweepy
 import csv
 
-#pass in the usernames of the accounts you want to download
+# Εδώ βάζουμε τα ονόματα χρήστη που θέλουμε να κατεβάσουμε, όσα θέλουμε
 accounts = ['AdonisGeorgiadi','PanosKammenos','rachelmakri']
 
-# load our API credentials from config.py file
+# Φορτώνουμε τα διαπιστευτήρια για το API του Twitter που βρίσκονται στο αρχείο config.py
 config = {}
 execfile("config.py", config)
 
 
 def get_all_tweets(screen_name):
-	#Twitter only allows access to a users most recent 3240 tweets with this method
+	# Το Twitter επιτρέπει μέσω του API τη λήψη μόνο των τελευταίων 3240 tweets ενός χρήστη
 	
-	#authorize twitter, initialize tweepy
+	# Ταυτοποίηση μέσω των διαπιστευτηρίων μας στο Twitter
 	auth = tweepy.OAuthHandler(config['consumer_key'], config['consumer_secret'])
 	auth.set_access_token(config['access_key'], config['access_secret'])
+	# Ενεργοποίηση της βιβλιοθήκης tweepy
 	api = tweepy.API(auth)
 	
-	#initialize a list to hold all the tweepy Tweets
+	# Δημιουργία μιας κενής λίστας η οποία θα κρατάει όλα τα tweets
 	alltweets = []	
 	
-	#make initial request for most recent tweets (200 is the maximum allowed count)
+	# Το αρχικό αίτημα για τα 200 πιο πρόσφατα tweets (τόσα επιτρέπονται σε ένα αίτημα)
 	new_tweets = api.user_timeline(screen_name = screen_name,count=200)
 	
-	#save most recent tweets
+	# Αποθήκευση των πιο πρόσφατων tweets
 	alltweets.extend(new_tweets)
 	
-	#save the id of the oldest tweet less one
+	# Αποθήκευση του αναγνωριστικού (id) του παλαιότερου από αυτά τα tweets, μείον 1
 	oldest = alltweets[-1].id - 1
 	
-	#keep grabbing tweets until there are no tweets left to grab
+	# Έναρξη βρόγχου
+	# Συνεχές κατέβασμα tweets ανά διακοσάδες μέχρι να κατέβουν όλα
 	while len(new_tweets) > 0:
 		print "getting tweets before %s" % (oldest)
 		
-		#all subsiquent requests use the max_id param to prevent duplicates
+		# Όλα τα αιτήματα που ακολουθούν χρησιμοποιούν την παράμετρο max_id για την αποφυγή διπλοτύπων
 		new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id=oldest) 
-		#new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id='300')
+		#new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id='300') # Προσωρινή εντολή - Θα διαγραφεί μετά
 
-		
-		#save most recent tweets
+		# Αποθήκευση των πιο πρόσφατων tweets
 		alltweets.extend(new_tweets)
 		
-		#update the id of the oldest tweet less one
+		# Ενημέρωση του αναγνωριστικού (id) του παλαιότερου από αυτά τα tweets, μείον 1
 		oldest = alltweets[-1].id - 1
 		
 		print "...%s tweets downloaded so far" % (len(alltweets))
 	
-	#transform the tweepy tweets into a 2D array that will populate the csv	
+	# Μετατροπή των tweets σε διδιάστατο πίνακα ο οποίος μετά θα γραφτεί στο csv
 	outtweets = [[tweet.id_str, tweet.created_at, tweet.retweet_count, tweet.favorite_count, tweet.text.encode("utf-8")] for tweet in alltweets]
 	
-	#write the csv	
+	# Εγγραφή στο csv	
 	with open('%s_tweets.csv' % screen_name, 'wb') as f:
 		writer = csv.writer(f)
 		writer.writerow(["id","created_at","retweet_count","favorite_count","text"])
