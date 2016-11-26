@@ -63,7 +63,7 @@ def get_all_tweets(screen_name):
 	# Εγγραφή στο csv	
 	with open('%s_tweets.csv' % screen_name, 'wb') as f:
 		writer = csv.writer(f)
-		writer.writerow(["id","created_at","retweet_count","favorite_count","text"])
+		writer.writerow(["Αναγνωριστικό tweet","Ημερομηνία δημιουργίας","Αριθμός retweets","Αριθμός αγαπημένων","Κείμενο"])
 		writer.writerows(outtweets)
 	
 	pass
