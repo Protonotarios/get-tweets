@@ -43,7 +43,7 @@ def get_all_tweets(screen_name):
 	# Έναρξη βρόγχου
 	# Συνεχές κατέβασμα tweets ανά διακοσάδες μέχρι να κατέβουν όλα
 	while len(new_tweets) > 0:
-		print "getting tweets before %s" % (oldest)
+		print "λήψη των tweets πριν το %s" % (oldest)
 		
 		# Όλα τα αιτήματα που ακολουθούν χρησιμοποιούν την παράμετρο max_id για την αποφυγή διπλοτύπων
 		new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id=oldest) 
@@ -55,7 +55,7 @@ def get_all_tweets(screen_name):
 		# Ενημέρωση του αναγνωριστικού (id) του παλαιότερου από αυτά τα tweets, μείον 1
 		oldest = alltweets[-1].id - 1
 		
-		print "...%s tweets downloaded so far" % (len(alltweets))
+		print "...%s tweets κατέβηκαν μέχρι τώρα" % (len(alltweets))
 	
 	# Μετατροπή των tweets σε διδιάστατο πίνακα ο οποίος μετά θα γραφτεί στο csv
 	outtweets = [[tweet.id_str, tweet.created_at, tweet.retweet_count, tweet.favorite_count, tweet.text.encode("utf-8")] for tweet in alltweets]
