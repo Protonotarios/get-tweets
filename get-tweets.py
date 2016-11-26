@@ -37,8 +37,8 @@ def get_all_tweets(screen_name):
 		print "getting tweets before %s" % (oldest)
 		
 		#all subsiquent requests use the max_id param to prevent duplicates
-		#new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id=oldest) 
-		new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id='300')
+		new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id=oldest) 
+		#new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id='300')
 
 		
 		#save most recent tweets
