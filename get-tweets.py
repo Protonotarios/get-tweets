@@ -4,23 +4,20 @@
 import tweepy #https://github.com/tweepy/tweepy
 import csv
 
-#Twitter API credentials
-consumer_key = ""
-consumer_secret = ""
-access_key = ""
-access_secret = ""
-bearer_token = ""
-
 #pass in the usernames of the accounts you want to download
 accounts = ['AdonisGeorgiadi','PanosKammenos','rachelmakri']
+
+# load our API credentials from config.py file
+config = {}
+execfile("config.py", config)
 
 
 def get_all_tweets(screen_name):
 	#Twitter only allows access to a users most recent 3240 tweets with this method
 	
 	#authorize twitter, initialize tweepy
-	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-	auth.set_access_token(access_key, access_secret)
+	auth = tweepy.OAuthHandler(config['consumer_key'], config['consumer_secret'])
+	auth.set_access_token(config['access_key'], config['access_secret'])
 	api = tweepy.API(auth)
 	
 	#initialize a list to hold all the tweepy Tweets
