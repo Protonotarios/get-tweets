@@ -75,7 +75,7 @@ def get_all_tweets(screen_name):
 
 
 if __name__ == '__main__':
-    for account in accounts:
+    for account in config['accounts']:
         print 'Έναρξη λήψης tweets για το λογαριασμό %s' % (account)
         get_all_tweets(account)
         print 'Η λήψη tweets για το λογαριασμό %s ολοκληρώθηκε' % (account)
