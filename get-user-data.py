@@ -23,6 +23,7 @@ def get_user_data(screen_name):
     user = api.get_user(screen_name = screen_name)
 
     # Επιλογή των στοιχείων που μας ενδιαφέρουν από το επιστρεφόμενο json
+    # Επεξήγηση των πεδίων εδώ: https://dev.twitter.com/overview/api/users
     # Τα πεδία που δύναται να περιέχουν Ελληνικά πρέπει να κωδικοποιηθούν σε UTF-8
     userdata = [user.id_str, user.screen_name, user.name.encode("utf-8"),
                 user.description.encode("utf-8"), user.created_at, 
