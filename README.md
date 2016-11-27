@@ -23,7 +23,9 @@
 
 4. Για να τρέξει το πρόγραμμα χρειάζεται τη βιβλιοθήκη [tweepy](https://github.com/tweepy/tweepy). Εγκαθιστούμε τη βιβλιοθήκη με
 
-    pip install tweepy
+```
+pip install tweepy
+```
 	
 ### Εκτέλεση
 
