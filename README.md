@@ -33,7 +33,7 @@ pip install tweepy
 
 Εκτελούμε και το πρόγραμμα [get-user-data.py](get-user-data.py) το οποίο δημιουργεί το αρχείο `user data.csv` που περιέχει τα στοιχεία των λογαριασμών.
 
-## Attributions
+## Acknowledgements
 
 * [get-tweets.py]() is based on yanofsky's gist [tweet_dumper.py](https://gist.github.com/yanofsky/5436496)
 * Ο σχεδιασμός της φιλοσοφίας του προγράμματος έγινε σε συνεργασία με τη Βάνα Σαρήμπεη
