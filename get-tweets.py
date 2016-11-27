@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# encoding: utf-8
+# encoding: utf-8 # Απαραίτητο όταν υπάρχουν Ελληνικά
 
 import tweepy #https://github.com/tweepy/tweepy
 import csv
