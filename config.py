@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# encoding: utf-8 # Απαραίτητο όταν υπάρχουν Ελληνικά
+# encoding: utf-8
 
 # ΑΡΧΕΙΟ ΡΥΘΜΙΣΕΩΝ
 
