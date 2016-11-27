@@ -25,6 +25,8 @@ def get_all_tweets(screen_name):
 	
     # Το αρχικό αίτημα για τα 200 πιο πρόσφατα tweets (τόσα επιτρέπονται σε ένα αίτημα)
     print "Λήψη της πρώτης διακοσάδας tweets"
+    # Χρήση της μεθόδου user_timeline του tweepy για τη λήψη tweets
+    # http://docs.tweepy.org/en/v3.5.0/api.html
     new_tweets = api.user_timeline(screen_name = screen_name,count=200)
 	
     # Αποθήκευση των πιο πρόσφατων tweets
@@ -52,13 +54,19 @@ def get_all_tweets(screen_name):
         		
         print "...%s tweets έχουν ληφθεί μέχρι τώρα" % (len(alltweets))
 	
+    # Επιλογή των στοιχείων που μας ενδιαφέρουν από το επιστρεφόμενο json
+    # Επεξήγηση των πεδίων εδώ: https://dev.twitter.com/overview/api/tweets
+    # Τα πεδία που δύναται να περιέχουν Ελληνικά πρέπει να κωδικοποιηθούν σε UTF-8
     # Μετατροπή των tweets σε διδιάστατο πίνακα ο οποίος μετά θα γραφτεί στο csv
-    outtweets = [[tweet.id_str, tweet.created_at, tweet.retweet_count, tweet.favorite_count, tweet.text.encode("utf-8")] for tweet in alltweets]
+    outtweets = [[tweet.id_str, tweet.created_at, tweet.retweet_count, tweet.favorite_count, tweet.text.encode("utf-8")] 
+                  for tweet in alltweets]
 	
-    # Εγγραφή στο csv	
+    # Δημιουργία του εκάστοτε csv	
     with open('%s_tweets.csv' % screen_name, 'wb') as f:
         writer = csv.writer(f)
+        # Δημιουργία κεφαλίδων στηλών
         writer.writerow(["Αναγνωριστικό tweet","Ημερομηνία δημιουργίας","Αριθμός retweets","Αριθμός αγαπημένων","Κείμενο"])
+        # Εγγραφή των tweets
         writer.writerows(outtweets)
   
     print "Τα tweets εγγράφηκαν στο αρχείο %s_tweets.csv" % (screen_name)
