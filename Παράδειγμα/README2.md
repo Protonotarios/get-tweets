@@ -4,7 +4,7 @@
 | --- |
 
 Η ανάλυση συναισθήματος με τεχνικές επεξεργασίας φυσικής γλώσσας γίνεται
-με το πρόγραμμα **NiosTo** (βλ. #Acknowledgements)
+με το πρόγραμμα **NiosTo** (βλ. [Acknowledgements](#Acknowledgements)
 
 ## Acknowledgements
 
