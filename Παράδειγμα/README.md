@@ -186,3 +186,8 @@ accounts = ['AdonisGeorgiadi','PanosKammenos','rachelmakri']
 * [AdonisGeorgiadi_tweets.csv](AdonisGeorgiadi_tweets.csv)
 * [PanosKammenos_tweets.csv](PanosKammenos_tweets.csv)
 * [rachelmakri_tweets.csv](rachelmakri_tweets.csv)
+
+Με τη συλλογή των τεσσάρων αρχείων ολοκληρώνεται η λειτουργία του προγράμματος 
+και η πρώτη φάση της εργασίας. 
+
+Για ανάλυση των αποτελεσμάτων δείτε την επόμενη σελίδα [README2.md]().
