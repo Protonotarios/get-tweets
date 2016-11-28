@@ -170,6 +170,6 @@ accounts = ['AdonisGeorgiadi','PanosKammenos','rachelmakri']
 ```
 
 Μόλις ολοκληρωθεί η εκτέλεση έχουν εγγραφεί τρία αρχεία:
-* [AdonisGeorgiadi_tweets.csv]
-* [PanosKammenos_tweets.csv]
-* [rachelmakri_tweets.csv]
+* [AdonisGeorgiadi_tweets.csv]()
+* [PanosKammenos_tweets.csv]()
+* [rachelmakri_tweets.csv]()
