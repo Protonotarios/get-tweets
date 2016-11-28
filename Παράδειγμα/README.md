@@ -42,7 +42,9 @@ accounts = ['AdonisGeorgiadi','PanosKammenos','rachelmakri']
 
 ## Αποτελέσματα
 
-Ενδεικτική έξοδος κατά την εκτέλεση του get-tweets.py
+Εκτελούμε το πρόγραμμα [get-tweets.py](../get-tweets.py).
+
+Κατά την εκτέλεση του παίρνουμε ενδεικτικά την ακόλουθη έξοδο:
 ```
 Έναρξη λήψης tweets για το λογαριασμό AdonisGeorgiadi
 Λήψη της πρώτης διακοσάδας tweets
@@ -166,3 +168,8 @@ accounts = ['AdonisGeorgiadi','PanosKammenos','rachelmakri']
 -------------------------------
 Η λήψη tweets για όλους τους λογαριασμούς ολοκληρώθηκε
 ```
+
+Μόλις ολοκληρωθεί η εκτέλεση έχουν εγγραφεί τρία αρχεία:
+* [AdonisGeorgiadi_tweets.csv]
+* [PanosKammenos_tweets.csv]
+* [rachelmakri_tweets.csv]
