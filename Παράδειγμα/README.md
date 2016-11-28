@@ -50,11 +50,15 @@ accounts = ['AdonisGeorgiadi','PanosKammenos','rachelmakri']
 την ακόλουθη έξοδο:                                                
 ```
 Λήψη στοιχείων για το λογαριασμό AdonisGeorgiadi
+Αποθήκευση εικόνας προφίλ AdonisGeorgiadi.jpg
 Λήψη στοιχείων για το λογαριασμό PanosKammenos
+Αποθήκευση εικόνας προφίλ PanosKammenos.jpg
 Λήψη στοιχείων για το λογαριασμό rachelmakri
+Αποθήκευση εικόνας προφίλ rachelmakri.jpg
 Η λήψη στοιχείων για όλους τους λογαριασμούς ολοκληρώθηκε
 ```
 Μόλις ολοκληρωθεί η εκτέλεση έχει εγγραφεί το αρχείο: [user data.csv](user data.csv)
+καθώς και τρία αρχεία εικόνων με τις εικόνες προφίλ των χρηστών.
 
 Στη συνέχεια εκτελούμε το πρόγραμμα [get-tweets.py](../get-tweets.py).
 

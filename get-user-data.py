@@ -3,6 +3,7 @@
 
 import tweepy #https://github.com/tweepy/tweepy
 import csv
+import urllib
 
 # Φόρτωση του αρχείου ρυθμίσεων config.py 
 # με τα διαπιστευτήρια για το API του Twitter 
@@ -34,6 +35,10 @@ def get_user_data(screen_name):
 
     # Εγγραφή των στοιχείων ως νέα γραμμή στο csv
     writer.writerow(userdata)
+    
+    
+    print 'Αποθήκευση εικόνας προφίλ %s.jpg' % (screen_name)
+    urllib.urlretrieve(user.profile_image_url, "%s.jpg" % (screen_name))
 	
     pass
 
