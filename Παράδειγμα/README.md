@@ -24,6 +24,7 @@ https://twitter.com/ΌνομαΧρήστη
 ```
 
 Έτσι έχουμε:
+
 | Πολιτικός         | URL Twitter                         | Όνομα χρήστη    |
 | ----------------- | ----------------------------------- | --------------- |
 | Άδωνις Γεωργιάδης | https://twitter.com/AdonisGeorgiadi | AdonisGeorgiadi |
@@ -32,7 +33,7 @@ https://twitter.com/ΌνομαΧρήστη
 
 Στη συνέχεια τα ονόματα χρήστη τα περνάμε στο [config.py](../config.py) ως εξής:
 
-```
+```python
 accounts = ['AdonisGeorgiadi','PanosKammenos','rachelmakri']
 ```
 
