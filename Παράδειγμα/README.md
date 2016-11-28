@@ -25,7 +25,7 @@ https://twitter.com/ΌνομαΧρήστη
 
 Έτσι έχουμε:
 
-| Πολιτικός         | URL Twitter                         | Όνομα χρήστη    |
+| Χρήστης           | URL Twitter                         | Όνομα χρήστη    |
 | ----------------- | ----------------------------------- | --------------- |
 | Άδωνις Γεωργιάδης | https://twitter.com/AdonisGeorgiadi | AdonisGeorgiadi |
 | Πάνος Καμμένος    | https://twitter.com/PanosKammenos   | PanosKammenos   |
