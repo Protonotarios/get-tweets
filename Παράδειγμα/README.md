@@ -60,6 +60,8 @@ accounts = ['AdonisGeorgiadi','PanosKammenos','rachelmakri']
 Μόλις ολοκληρωθεί η εκτέλεση έχει εγγραφεί το αρχείο: [user data.csv](user data.csv)
 καθώς και τρία αρχεία εικόνων με τις εικόνες προφίλ των χρηστών.
 
+![εικόνα προφίλ](AdonisGeorgiadi.jpg) ![εικόνα προφίλ](PanosKammenos.jpg) ![εικόνα προφίλ](rachelmakri.jpg) 
+
 Στη συνέχεια εκτελούμε το πρόγραμμα [get-tweets.py](../get-tweets.py).
 
 Κατά την εκτέλεση του (διαρκεί 5-10 λεπτά) παίρνουμε ενδεικτικά την ακόλουθη έξοδο:
