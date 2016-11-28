@@ -194,6 +194,14 @@ accounts = ['AdonisGeorgiadi','PanosKammenos','rachelmakri']
 * [PanosKammenos_tweets.csv](PanosKammenos_tweets.csv)
 * [rachelmakri_tweets.csv](rachelmakri_tweets.csv)
 
+Επειδή τα παραπάνω αρχεία είναι τεράστια και το GitHub δεν μπορεί να τα
+απεικονίσει ως λογιστικά φύλλα, μπορείτε να δείτε ένα δείγμα:
+
+[rachelmakri_tweets-sample.csv](rachelmakri_tweets-sample.csv)
+
+(Στο κάτω μέρος έχει γραμμή κύλισης και μετατοπίζοντάς την μπορείτε να 
+δείτε και τα υπόλοιπα πεδία).
+
 Με τη συλλογή των τεσσάρων αρχείων ολοκληρώνεται η λειτουργία του προγράμματος 
 και η πρώτη φάση της εργασίας. 
 
