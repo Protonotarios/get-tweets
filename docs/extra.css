@@ -5,6 +5,9 @@ body, h1, h2, h3, h4, h5, h6, legend {
     font-weight: 300;
     font-size: 1em; 
 }
+body {
+    font-size: 1em; 
+}
 pre, code, .rst-content tt, kbd, samp {
     font-family: "Ubuntu Mono",Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;
     font-size: 1em;
