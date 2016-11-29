@@ -13,7 +13,6 @@ pre, code, .rst-content tt, kbd, samp {
 }
 
 code {
-    padding: 0;
     padding-top: 0.2em;
     padding-bottom: 0.2em;
     margin: 0;
