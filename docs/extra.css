@@ -19,6 +19,7 @@ code {
     background-color: rgba(0,0,0,0.04);
     border-radius: 3px;
     border: initial;
+    color: #333;
 }
 
 .wy-side-nav-search {
