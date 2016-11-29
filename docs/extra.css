@@ -10,13 +10,16 @@ body {
 pre, code, .rst-content tt, kbd, samp {
     font-family: "Ubuntu Mono",Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;
     font-size: 1em;
+}
 
+code {
     padding: 0;
     padding-top: 0.2em;
     padding-bottom: 0.2em;
     margin: 0;
     background-color: rgba(0,0,0,0.04);
     border-radius: 3px;
+    border: initial;
 }
 
 .wy-side-nav-search {
@@ -28,5 +31,6 @@ pre, code, .rst-content tt, kbd, samp {
 }
 
 h1 {
-  /*color: green;*/
+    font-size: 250%;
+    font-weight: 300;
 }
