@@ -26,11 +26,11 @@ https://twitter.com/ΌνομαΧρήστη
 
 Έτσι έχουμε:
 
-| Χρήστης           | URL Twitter                         | Όνομα χρήστη    |
-| ----------------- | ----------------------------------- | --------------- |
+| Χρήστης           | URL Twitter                                                                | Όνομα χρήστη    |
+| ----------------- | -------------------------------------------------------------------------- | --------------- |
 | Άδωνις Γεωργιάδης | [https://twitter.com/AdonisGeorgiadi](https://twitter.com/AdonisGeorgiadi) | AdonisGeorgiadi |
-| Πάνος Καμμένος    | [https://twitter.com/PanosKammenos](https://twitter.com/PanosKammenos)   | PanosKammenos   |
-| Ραχήλ Μακρή       | [](https://twitter.com/rachelmakri)     | rachelmakri     |
+| Πάνος Καμμένος    | [https://twitter.com/PanosKammenos](https://twitter.com/PanosKammenos)     | PanosKammenos   |
+| Ραχήλ Μακρή       | [https://twitter.com/rachelmakri](https://twitter.com/rachelmakri)         | rachelmakri     |
 
 Στη συνέχεια τα ονόματα χρήστη τα περνάμε στο [config.py](../config.py) ως εξής:
 
