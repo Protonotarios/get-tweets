@@ -1,6 +1,7 @@
-site_name: Εξαγωγέας δεδομένων Twitter
+site_name: Συλλέκτης δεδομένων από το Twitter
 pages:
 - Αρχική: index.md
 - Παράδειγμα: Παράδειγμα/README.md
 - Ανάλυση: Παράδειγμα/README2.md
 theme: readthedocs
+extra_css: [extra.css]
