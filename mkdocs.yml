@@ -7,3 +7,4 @@ pages:
 - License: LICENSE.md
 theme: readthedocs
 extra_css: [extra.css]
+site_favicon: favicon.ico
