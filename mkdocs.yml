@@ -1,5 +1,5 @@
-site_name: MkLorum
+site_name: Εξαγωγέας δεδομένων Twitter
 pages:
 - Home: index.md
-- More: README.md
+- Παράδειγμα: Παράδειγμα/README.md
 theme: readthedocs
