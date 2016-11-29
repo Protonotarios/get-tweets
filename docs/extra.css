@@ -24,6 +24,9 @@ code {
 
 .wy-side-nav-search {
     background-color: #1da1f2;
+    background: url(bird.png);
+    background-position: bottom left;
+    background-size: cover;
 }
 
 .wy-side-nav-search>a, .wy-side-nav-search .wy-dropdown>a {
