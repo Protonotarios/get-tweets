@@ -45,13 +45,3 @@ pip install tweepy
 αριθμός tweets που μπορούμε να λάβουμε για έναν λογαριασμό είναι 3240.
 
 Ένα ενδεικτικό παράδειγμα χρήσης μπορείτε να δείτε στο φάκελο [Παράδειγμα](Παράδειγμα).
-
-## Acknowledgements
-
-* [get-tweets.py]() is based on yanofsky's gist [tweet_dumper.py](https://gist.github.com/yanofsky/5436496)
-* Ο σχεδιασμός της φιλοσοφίας του προγράμματος έγινε σε συνεργασία με τη 
-Βάνα Σαρήμπεη η οποία έκανε και το beta testing και εντόπισε τα bugs.
-
-## License
-
-[MIT](LICENSE)
