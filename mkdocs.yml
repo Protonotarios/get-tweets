@@ -1,6 +1,6 @@
 site_name: Εξαγωγέας δεδομένων Twitter
 pages:
-- Home: index.md
+- Αρχική: index.md
 - Παράδειγμα: Παράδειγμα/README.md
 - Ανάλυση: Παράδειγμα/README2.md
 theme: readthedocs
