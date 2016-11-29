@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,300i,700,700i&subset=greek');
+
+body {
+    font-family: "Ubuntu","Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+    font-weight: 300;
+}
+
+.wy-side-nav-search {
+    background-color: #1da1f2;
+}
+
 h1 {
   color: green;
 }
