@@ -1,8 +1,8 @@
 site_name: Συλλέκτης δεδομένων από το Twitter
 pages:
-- Αρχική: index.md
-- Παράδειγμα: Παράδειγμα/README.md
-- Ανάλυση: Παράδειγμα/README2.md
+- Αρχική σελίδα: index.md
+- Παράδειγμα χρήσης: Παράδειγμα/README.md
+- Ανάλυση δεδομένων: Παράδειγμα/README2.md
 - Κατέβασμα: download.md
 - Credits: credits.md
 - License: LICENSE.md
