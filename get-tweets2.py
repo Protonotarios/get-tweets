@@ -5,10 +5,14 @@ import tweepy #https://github.com/tweepy/tweepy
 import csv
 
 from openpyxl import Workbook
-wb = Workbook()
+wbx = Workbook(encoding='utf-8')
 
 # grab the active worksheet
-ws = wb.active
+wsx = wbx.active
+
+
+import xlwt
+
 
 # Φόρτωση του αρχείου ρυθμίσεων config.py 
 # με τα διαπιστευτήρια για το API του Twitter 
@@ -49,8 +53,8 @@ def get_all_tweets(screen_name):
         print "Λήψη της επόμενης διακοσάδας tweets μέχρι πριν το %s" % (oldest)
         		
         # Όλα τα αιτήματα που ακολουθούν χρησιμοποιούν την παράμετρο max_id για την αποφυγή διπλοτύπων
-        new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id=oldest) 
-        #new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id='300') # Προσωρινή εντολή - Θα διαγραφεί μετά
+        #new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id=oldest) 
+        new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id='300') # Προσωρινή εντολή - Θα διαγραφεί μετά
         
         # Αποθήκευση των πιο πρόσφατων tweets
         alltweets.extend(new_tweets)
@@ -68,7 +72,7 @@ def get_all_tweets(screen_name):
                   for tweet in alltweets]
 	
     # Δημιουργία του εκάστοτε csv	
-    with open('%s_tweets.csv' % screen_name, 'wb') as f:
+    with open('%s_tweets.csv' % screen_name, 'wbx') as f:
         writer = csv.writer(f)
         # Δημιουργία κεφαλίδων στηλών
         writer.writerow(["Αναγνωριστικό tweet","Κείμενο","Ημερομηνία δημιουργίας","Αριθμός retweets","Αριθμός αγαπημένων"])
@@ -77,13 +81,31 @@ def get_all_tweets(screen_name):
   
     print "Τα tweets εγγράφηκαν στο αρχείο %s_tweets.csv" % (screen_name)
     
-    # Δημιουργία του εκάστοτε xls
-    ws.append(["Αναγνωριστικό tweet","Κείμενο","Ημερομηνία δημιουργίας","Αριθμός retweets","Αριθμός αγαπημένων"])
+    # Δημιουργία του εκάστοτε xlsx
+    wsx.append(["Αναγνωριστικό tweet","Κείμενο","Ημερομηνία δημιουργίας","Αριθμός retweets","Αριθμός αγαπημένων"])
     for tweet in outtweets:
-        ws.append(tweet)
-    wb.save('%s_tweets.xlsx' % screen_name)
+        wsx.append(tweet)
+    wbx.save('%s_tweets.xlsx' % screen_name)
     
     print "Τα tweets εγγράφηκαν στο αρχείο %s_tweets.xlsx" % (screen_name)
+    
+    # Δημιουργία του εκάστοτε xls
+    
+    headers = [u"Αναγνωριστικό tweet",u"Κείμενο",u"Ημερομηνία δημιουργίας",u"Αριθμός retweets",u"Αριθμός αγαπημένων"]
+    #test = test.decode('utf-8')
+    
+    for i in range(len(headers)):
+        ws.write(0,i,headers[i])
+    for j in range(len(outtweets)):
+        for i in range(len(outtweets[j])):
+            if i==1:
+                outtweet = outtweets[j][i].decode('utf-8')
+            else:
+                outtweet = outtweets[j][i]
+            ws.write(j+1,i,outtweet)
+    
+    
+    wb.save('%s_tweets.xls' % screen_name)
 	
     pass
 
