@@ -77,26 +77,33 @@ def get_all_tweets(screen_name):
     outtweets = []
     partial_out_tweets = []
     for tweet in alltweets:
+        tweet_date = tweet.created_at.date()
         tweet_text = tweet.text.encode('utf-8')
         # Μετατροπή του tweet σε greeklish μικρά και σπάσιμό του σε λέξεις
         # για εύκολη σύγκριση με τις λέξεις του λεξικού
         words = unidecode(tweet_text.decode('utf-8')).lower().split()
         # Άθροιση του συνολικού συναισθήματος κάθε γνωστής λέξης από το λεξικό
         sentiment = sum(lexico.get(word, 0) for word in words)
-        outtweets.append([tweet.id_str, tweet_text, tweet.created_at, tweet.retweet_count, tweet.favorite_count, sentiment])
+        
+        # Έλεγχος αν το tweet περιέχει url
+        contains_url = 1 if 'http' in tweet_text else 0
 
-        tweet_date = tweet.created_at.date()
-        partial_out_tweets.append([tweet_date, tweet.retweet_count, tweet.favorite_count, sentiment, screen_name])
+        # Δημιουργία της τρέχουσας γραμμής για τα επιμέρους αρχεία χρήστη
+        outtweets.append([tweet.id_str, tweet_text, tweet.created_at, tweet.retweet_count, tweet.favorite_count, sentiment, contains_url])
+        
+        # Δημιουργία της τρέχουσας μερικής γραμμής για το συνολικό αρχείο
+        partial_out_tweets.append([tweet_date, tweet.retweet_count, tweet.favorite_count, sentiment, contains_url, screen_name])
         if tweet_date < min_date:
             min_date = tweet_date
-            
+
+    # Δημιουργία της τρέχουσας γραμμής με συνένωση των μερικών γραμμών, για το συνολικό αρχείο            
     combined_out_tweets.extend(partial_out_tweets)
     
     # Δημιουργία του εκάστοτε csv	
     with open('%s_tweets.csv' % screen_name, 'wb') as f:
         writer = csv.writer(f)
         # Δημιουργία κεφαλίδων στηλών
-        writer.writerow(['Αναγνωριστικό tweet','Κείμενο','Ημερομηνία δημιουργίας','Αριθμός retweets','Αριθμός αγαπημένων','Συναίσθημα'])
+        writer.writerow(['Αναγνωριστικό tweet','Κείμενο','Ημερομηνία δημιουργίας','Αριθμός retweets','Αριθμός αγαπημένων','Συναίσθημα','Περιέχει URL'])
         # Εγγραφή των tweets
         writer.writerows(outtweets)
   
@@ -117,7 +124,7 @@ if __name__ == '__main__':
     with open('combined_tweets.csv', 'wb') as f:
         writer = csv.writer(f)
         # Δημιουργία κεφαλίδων στηλών
-        writer.writerow(['Ημερομηνία δημιουργίας','Αριθμός retweets','Αριθμός αγαπημένων','Συναίσθημα','Χρήστης'])
+        writer.writerow(['Ημερομηνία δημιουργίας','Αριθμός retweets','Αριθμός αγαπημένων','Συναίσθημα','Περιέχει URL','Χρήστης'])
         # Εγγραφή των tweets
         writer.writerows(combined_out_tweets)
     print '-------------------------------'
@@ -135,20 +142,22 @@ if __name__ == '__main__':
 
         current_line = [test_date]
         for n, account in enumerate(config['accounts']):
-            current_line.extend([0,0,0,0])
+            current_line.extend([0,0,0,0,0])
             
         for tweet in combined_out_tweets:
             if tweet[0] == test_date:
                 for n, account in enumerate(config['accounts']):
-                    if config['accounts'][n] == tweet[4]:
+                    if config['accounts'][n] == tweet[5]:
                         # άθροιση tweets n-οστού χρήστη
-                        current_line[n * 4 + 1] += 1 
+                        current_line[n * 5 + 1] += 1 
                         # άθροιση retweets n-οστού χρήστη
-                        current_line[n * 4 + 2] += tweet[1]  
+                        current_line[n * 5 + 2] += tweet[1]  
                         # άθροιση αγαπημένων n-οστού χρήστη
-                        current_line[n * 4 + 3] += tweet[2] 
+                        current_line[n * 5 + 3] += tweet[2] 
                         # άθροιση συναισθήματος n-οστού χρήστη
-                        current_line[n * 4 + 4] += tweet[3] 
+                        current_line[n * 5 + 4] += tweet[3] 
+                        # άθροιση tweets με url n-οστού χρήστη
+                        current_line[n * 5 + 5] += tweet[4] 
 
         final_tweets.append(current_line)
         test_date += timedelta(days=1)
@@ -160,7 +169,7 @@ if __name__ == '__main__':
         # Δημιουργία κεφαλίδων στηλών
         header_line = ['Ημερομηνία']
         for n, account in enumerate(config['accounts']):
-            header_line.extend(['Tweets '+account,'Retweets '+account,'Αγαπημένα '+account,'Συναίσθημα '+account])
+            header_line.extend(['Tweets '+account,'Retweets '+account,'Αγαπημένα '+account,'Συναίσθημα '+account,'Tweets με URL '+account])
         writer.writerow(header_line)
         # Εγγραφή των tweets
         writer.writerows(final_tweets)
