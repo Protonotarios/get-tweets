@@ -61,8 +61,8 @@ def get_all_tweets(screen_name):
         print 'Λήψη της επόμενης διακοσάδας tweets μέχρι πριν το %s' % (oldest)
         		
         # Όλα τα αιτήματα που ακολουθούν χρησιμοποιούν την παράμετρο max_id για την αποφυγή διπλοτύπων
-        #new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id=oldest) 
-        new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id='300') # Προσωρινή εντολή - Θα διαγραφεί μετά
+        new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id=oldest) 
+        #new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id='300') # Προσωρινή εντολή - Θα διαγραφεί μετά
         
         # Αποθήκευση των πιο πρόσφατων tweets
         alltweets.extend(new_tweets)
@@ -119,7 +119,7 @@ def get_all_tweets(screen_name):
 
 
 if __name__ == '__main__':
-    print '\033[92mΣΥΛΛΕΚΤΗΣ ΔΕΔΟΜΕΝΩΝ TWITTER 0.2\033[0m\nΒοήθεια: http://get-tweets.rtfd.io'
+    print 'ΣΥΛΛΕΚΤΗΣ ΔΕΔΟΜΕΝΩΝ TWITTER 0.2\nΒοήθεια: http://get-tweets.rtfd.io'
     for account in config['accounts']:
         print hr,'Έναρξη λήψης tweets για το λογαριασμό %s' % (account)
         get_all_tweets(account)
