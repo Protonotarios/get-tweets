@@ -18,10 +18,16 @@
 3. Στο ίδιο αρχείο περνάμε τα usernames των λογαριασμών Twitter που
 θέλουμε να συλλέξουμε.
 
-4. Για να τρέξει το πρόγραμμα χρειάζεται τη βιβλιοθήκη [tweepy](https://github.com/tweepy/tweepy). 
-Εγκαθιστούμε τη βιβλιοθήκη με
+4. Για να τρέξει το πρόγραμμα χρειάζεται τις βιβλιοθήκες
+[tweepy](https://github.com/tweepy/tweepy) και
+[unidecode](https://pypi.python.org/pypi/Unidecode)
+Εγκαθιστούμε διαδοχικά τις βιβλιοθήκες με
 ```
 pip install tweepy
+```
+και
+```
+pip install unidecode
 ```
 	
 ### Εκτέλεση
