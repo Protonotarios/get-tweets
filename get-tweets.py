@@ -24,8 +24,11 @@ combined_out_tweets = []
 # Ορισμός μέγιστης και ελάχιστης ημερομηνία στη σημερινή
 min_date = max_date = datetime.now().date()
 
+# Απλώς ένα διαχωριστικό για τις εκτυπώσεις
+hr = '-'*40+'\n'
+
 def get_all_tweets(screen_name):
-    global min_date 
+    global min_date, hr
     
     # Το Twitter επιτρέπει μέσω του API τη λήψη μόνο των τελευταίων 3240 tweets ενός χρήστη
     
@@ -58,8 +61,8 @@ def get_all_tweets(screen_name):
         print 'Λήψη της επόμενης διακοσάδας tweets μέχρι πριν το %s' % (oldest)
         		
         # Όλα τα αιτήματα που ακολουθούν χρησιμοποιούν την παράμετρο max_id για την αποφυγή διπλοτύπων
-        new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id=oldest) 
-        #new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id='300') # Προσωρινή εντολή - Θα διαγραφεί μετά
+        #new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id=oldest) 
+        new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id='300') # Προσωρινή εντολή - Θα διαγραφεί μετά
         
         # Αποθήκευση των πιο πρόσφατων tweets
         alltweets.extend(new_tweets)
@@ -74,11 +77,14 @@ def get_all_tweets(screen_name):
     # Τα πεδία που δύναται να περιέχουν Ελληνικά πρέπει να κωδικοποιηθούν σε UTF-8
     # Μετατροπή των tweets σε διδιάστατο πίνακα ο οποίος μετά θα γραφτεί στο csv
 
+    print hr,'Ανάλυση των tweets (συναισθήματος, URL κ.ά.)...'
     outtweets = []
     partial_out_tweets = []
     for tweet in alltweets:
         tweet_date = tweet.created_at.date()
         tweet_text = tweet.text.encode('utf-8')
+        
+        # Ανάλυση συναισθήματος
         # Μετατροπή του tweet σε greeklish μικρά και σπάσιμό του σε λέξεις
         # για εύκολη σύγκριση με τις λέξεις του λεξικού
         words = unidecode(tweet_text.decode('utf-8')).lower().split()
@@ -113,12 +119,12 @@ def get_all_tweets(screen_name):
 
 
 if __name__ == '__main__':
+    print '\033[92mΣΥΛΛΕΚΤΗΣ ΔΕΔΟΜΕΝΩΝ TWITTER 0.2\033[0m\nΒοήθεια: http://get-tweets.rtfd.io'
     for account in config['accounts']:
-        print 'Έναρξη λήψης tweets για το λογαριασμό %s' % (account)
+        print hr,'Έναρξη λήψης tweets για το λογαριασμό %s' % (account)
         get_all_tweets(account)
         print 'Η λήψη tweets για το λογαριασμό %s ολοκληρώθηκε' % (account)
-        print '-------------------------------'
-    print 'Η λήψη tweets για όλους τους λογαριασμούς ολοκληρώθηκε' 
+    print hr,'Η λήψη tweets για όλους τους λογαριασμούς ολοκληρώθηκε' 
     
     # Δημιουργία του συνολικού csv	
     with open('combined_tweets.csv', 'wb') as f:
@@ -127,13 +133,11 @@ if __name__ == '__main__':
         writer.writerow(['Ημερομηνία δημιουργίας','Αριθμός retweets','Αριθμός αγαπημένων','Συναίσθημα','Περιέχει URL','Χρήστης'])
         # Εγγραφή των tweets
         writer.writerows(combined_out_tweets)
-    print '-------------------------------'
-    print 'Τα συνδυασμένα δεδομένα εγγράφηκαν στο αρχείο combined_tweets.csv'
+    print hr,'Τα συνδυασμένα δεδομένα εγγράφηκαν στο αρχείο combined_tweets.csv'
     date_delta = max_date - min_date
     print 'Εύρος ημερομηνιών: από', min_date, 'μέχρι σήμερα (',date_delta,')'
 
-    print '-------------------------------'
-    print 'Άθροιση δεδομένων...'
+    print hr,'Άθροιση δεδομένων...'
     final_tweets = []
     test_date = min_date
     while test_date <= max_date:
@@ -161,7 +165,6 @@ if __name__ == '__main__':
 
         final_tweets.append(current_line)
         test_date += timedelta(days=1)
-    print '...Η άθροιση δεδομένων ολοκληρώθηκε'
     
     # Δημιουργία του τελικού csv	
     with open('final_tweets.csv', 'wb') as f:
