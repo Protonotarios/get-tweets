@@ -1,4 +1,7 @@
 # Κατέβασμα
 
-* [Τελευταία έκδοση](https://github.com/Protonotarios/get-tweets/archive/master.zip) (για όλες τις πλατφόρμες: Linux, Windows, Mac)
+Μπορείτε να κατεβάσετε την τελευταία έκδοση του προγράμματος (ή οποιαδήποτε άλλη)
+απευθείας από το [GitHub](https://github.com/Protonotarios/get-tweets/releases).
+
+Το πρόγραμμα είναι συμβατό με όλες τις πλατφόρμες: Linux, Windows, Mac.
 
