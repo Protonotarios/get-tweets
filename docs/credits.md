@@ -18,3 +18,4 @@ DOI: [http://dx.doi.org/10.1007/978-3-319-11749-2_4](http://dx.doi.org/10.1007/9
 Free download for research or any other published work: [http://deixto.com/niosto](http://deixto.com/niosto)
 * All LibreOffice Calc graphs under [Mozilla Public License 2.0](https://www.libreoffice.org/about-us/licenses/)
 * Bird image by **Creative Tools** on [Flickr](https://www.flickr.com/photos/creative_tools/5360884710), licensed cc-by-2.0
+* Coded on [Spyder](https://github.com/spyder-ide/spyder) The Scientific PYthon Development EnviRonment

@@ -37,7 +37,7 @@ pip install unidecode
 [get-user-data.py](https://github.com/Protonotarios/get-tweets/blob/version02/get-user-data.py) 
 το οποίο συλλέγει τα στοιχεία (μεταδεδομένα) των λογαριασμών που έχουμε ορίσει
 και τα αποθηκεύει στο αρχείο 
-[user data.csv].
+[user data.csv](https://github.com/Protonotarios/get-tweets/blob/version02/docs/%CE%A0%CE%B1%CF%81%CE%AC%CE%B4%CE%B5%CE%B9%CE%B3%CE%BC%CE%B1/user%20data.csv).
 
 Στη συνέχεια εκτελούμε το πρόγραμμα 
 [get-tweets.py](https://github.com/Protonotarios/get-tweets/blob/version02/get-tweets.py) 
@@ -58,4 +58,4 @@ pip install unidecode
 Αυτό σημαίνει ότι τα tweets λαμβάνονται ανά διακοσάδες και ότι ο μέγιστος
 αριθμός tweets που μπορούμε να λάβουμε για έναν λογαριασμό είναι 3240.
 
-Στη συνέχεια μπορείτε να δείτε ένα ενδεικτικό παράδειγμα χρήσης.
+Στη συνέχεια μπορούμε να δούμε ένα ενδεικτικό παράδειγμα χρήσης.
