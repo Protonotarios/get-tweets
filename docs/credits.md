@@ -1,5 +1,5 @@
-This program is created by Ioannis Protonotarios and may be used under a 
-[free license.](LICENSE.md)
+This program is created by Ioannis Protonotarios and it's 
+[free software](https://www.fsf.org/about/what-is-free-software).
 
 # Acknowledgements
 
