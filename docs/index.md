@@ -11,17 +11,18 @@
 ### Προαπαιτούμενα
 
 1. Αρχικά δημιουργούμε τα απαραίτητα API credentials στο Twitter στη 
-διεύθυνση: https://apps.twitter.com/app/new
+διεύθυνση: [https://apps.twitter.com/app/new](https://apps.twitter.com/app/new)
 
-2. Στη συνέχεια περνάμε τα διαπιστευτήρια στο αρχείο [config.py](config.py)
+2. Στη συνέχεια περνάμε τα διαπιστευτήρια στο αρχείο 
+[config.py](https://github.com/Protonotarios/get-tweets/blob/version02/config.py)
 
 3. Στο ίδιο αρχείο περνάμε τα usernames των λογαριασμών Twitter που
 θέλουμε να συλλέξουμε.
 
 4. Για να τρέξει το πρόγραμμα χρειάζεται τις βιβλιοθήκες
 [tweepy](https://github.com/tweepy/tweepy) και
-[unidecode](https://pypi.python.org/pypi/Unidecode)
-Εγκαθιστούμε διαδοχικά τις βιβλιοθήκες με
+[unidecode](https://pypi.python.org/pypi/Unidecode).
+Εγκαθιστούμε διαδοχικά τις βιβλιοθήκες με:
 ```
 pip install tweepy
 ```
@@ -32,12 +33,15 @@ pip install unidecode
 	
 ### Εκτέλεση
 
-Εκτελούμε το πρόγραμμα [get-user-data.py](get-user-data.py) το οποίο 
-συλλέγει τα στοιχεία (μεταδεδομένα) των λογαριασμών που έχουμε ορίσει
-και τα αποθηκεύει στο αρχείο `user data.csv`.
+Εκτελούμε το πρόγραμμα 
+[get-user-data.py](https://github.com/Protonotarios/get-tweets/blob/version02/get-user-data.py) 
+το οποίο συλλέγει τα στοιχεία (μεταδεδομένα) των λογαριασμών που έχουμε ορίσει
+και τα αποθηκεύει στο αρχείο 
+[user data.csv].
 
-Στη συνέχεια εκτελούμε το πρόγραμμα [get-tweets.py](get-tweets.py) το 
-οποίο συλλέγει όλα τα tweets των λογαριασμών μαζί με τα μεταδεδομένα τους
+Στη συνέχεια εκτελούμε το πρόγραμμα 
+[get-tweets.py](https://github.com/Protonotarios/get-tweets/blob/version02/get-tweets.py) 
+το οποίο συλλέγει όλα τα tweets των λογαριασμών μαζί με τα μεταδεδομένα τους
 όπως αριθμός retweets, αριθμός likes κ.ά. ενώ ταυτόχρονα εφαρμόζει και
 ανάλυση συναισθήματος μέσω επεξεργασίας φυσικής γλώσσσας για κάθε tweet.
 
