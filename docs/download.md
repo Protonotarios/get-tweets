@@ -1,7 +1,7 @@
 # Κατέβασμα
 
 Μπορείτε να κατεβάσετε την τελευταία έκδοση του προγράμματος (ή οποιαδήποτε άλλη)
-απευθείας από το [GitHub](https://github.com/Protonotarios/get-tweets/releases).
+απευθείας από **[εδώ](https://github.com/Protonotarios/get-tweets/releases)**.
 
 Το πρόγραμμα είναι συμβατό με όλες τις πλατφόρμες: Linux, Windows, Mac.
 
