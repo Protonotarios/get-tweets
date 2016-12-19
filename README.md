@@ -6,8 +6,8 @@
 
 # ΠΡΟΣΟΧΗ
 
-Η τρέχουσα έκδοση είναι ασταθής.
+Η master έκδοση είναι ασταθής.
 
-Η σταθερή έκδοση είναι η [έκδοση 0.1](https://github.com/Protonotarios/get-tweets/tree/version01)
+Κατεβάστε την [τελευταία σταθερή έκδοση](https://github.com/Protonotarios/get-tweets/releases/latest)
 
-Περισσότερες πληροφορίες στο [εγχειρίδιο χρήσης της έκδοσης 0.1](https://get-tweets.readthedocs.io/el/version01/)
+Περισσότερες πληροφορίες στο [εγχειρίδιο χρήσης της τελευταίας σταθερής έκδοσης](https://get-tweets.readthedocs.io/)
